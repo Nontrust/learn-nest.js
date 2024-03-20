@@ -58,11 +58,27 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-##Generate Resoucres
+## Generate Resoucres
 ```bash
 # transport layer
 $ nest g resource [name]
 ```
+
+## Controller Decorator 
+| NestJS Decorator         | Spring annotation                       |
+|--------------------------|-----------------------------------------|
+| `@Request(), @Req()`     | `@RequestBody`                          |
+| `@Response(), @Res()`    | `@ResponseBody`or `ResponseEntity.of()` |
+| `@Next()`                | -                                       |
+| `@Session()`             | `HttpSession`                           |
+| `@Param(key?: string)`   | `@PathVariable`                         |
+| `@Body(key?: string)`    | `@RequestBody`                          |
+| `@Query(key?: string)`   | `@RequestParam`                         |
+| `@Headers(key?: string)` | `@RequestHeader`                        |
+| `@Ip()`                  | -                                       |
+| `@HostParam()`           | -                                       |
+
+
 
 ## Support
 
