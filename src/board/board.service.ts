@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Board } from './board.model';
-import { BoardStatus, BoardType } from './enums/boardStatus';
+
+import { CreateBoardDto } from './dto/create-board.dto';
 
 @Injectable()
 export class BoardService {
@@ -13,13 +14,8 @@ export class BoardService {
     return this.boards.find((board: Board) => board.id === id);
   }
 
-  setBoard(
-    id: string,
-    title: string,
-    description: string,
-    type: BoardType,
-  ): Board {
-    const board = Board.of(id, title, description, BoardStatus.PUBLIC, type, 0);
+  insertBoard(dto: CreateBoardDto): Board {
+    const board = Board.ofDto(dto);
     this.boards.push(board);
     return board;
   }

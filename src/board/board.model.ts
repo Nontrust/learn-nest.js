@@ -1,4 +1,6 @@
 import { BoardStatus, BoardType } from './enums/boardStatus';
+import { CreateBoardDto } from './dto/create-board.dto';
+import { v4 as uuid } from 'uuid';
 
 export class Board {
   constructor(
@@ -9,6 +11,17 @@ export class Board {
     public readonly type?: BoardType,
     public readonly viewCount?: number,
   ) {}
+
+  public static ofDto(dto: CreateBoardDto) {
+    return Board.of(
+      uuid(),
+      dto.title,
+      dto.description,
+      dto.status,
+      dto.type,
+      0,
+    );
+  }
 
   public static of(
     id: string,
