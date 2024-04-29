@@ -2,10 +2,14 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { PORT } from '../constant';
 import validationPipe from './config/core/config.validation';
+import * as compression from 'compression';
 
 /** when using default(express) context */
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // https://docs.nestjs.com/techniques/compression
+  // TODO: reverse Proxy application server 사용 시 압축 미들웨어 사용하면 안됨
+  app.use(compression());
   app.useGlobalPipes(validationPipe);
 
   await app.listen(PORT);
