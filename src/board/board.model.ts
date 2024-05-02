@@ -5,22 +5,16 @@ import { v4 as uuid } from 'uuid';
 export class Board {
   constructor(
     public readonly id: string,
-    public readonly title: string,
-    public readonly description?: string,
-    public readonly status?: BoardStatus,
-    public readonly type?: BoardType,
-    public readonly viewCount?: number,
+    public title: string,
+    public description?: string,
+    public status?: BoardStatus,
+    public type?: BoardType,
+    public viewCount?: number,
   ) {}
 
   public static ofDto(dto: CreateBoardDto) {
-    return Board.of(
-      uuid(),
-      dto.title,
-      dto.description,
-      dto.status,
-      dto.type,
-      0,
-    );
+    const { title, description, status, type } = dto;
+    return Board.of(uuid(), title, description, status, type, 0);
   }
 
   public static of(
