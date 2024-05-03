@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { BoardController } from './board.controller';
 import { BoardService } from './board.service';
-import { LoggerModule } from '../logger/logger.module';
+import { LoggerModule } from '../config/core/logger/logger.module';
 
 @Module({
   imports: [BoardModule, LoggerModule],
