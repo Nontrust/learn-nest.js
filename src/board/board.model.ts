@@ -1,6 +1,7 @@
-import { BoardStatus, BoardType } from './enums/boardStatus';
+import { BoardStatus } from './enums/boardStatus';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { v4 as uuid } from 'uuid';
+import { BoardType } from './enums/board.enum.type';
 
 export class Board {
   constructor(
