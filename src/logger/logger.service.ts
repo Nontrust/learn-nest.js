@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { createLogger, format, Logger, transports } from 'winston';
+import { Log } from './logger';
 
 @Injectable()
-export class LoggerService {
+export class LoggerService implements Log {
+  readonly logger: Logger;
   constructor() {
     this.logger = createLogger({
       level: 'info',
       format: format.combine(
         format.timestamp(),
-        format.printf(
-          (info) => `${info.timestamp} [${info.level}]: ${info.message}`,
-        ),
+        format.printf(Log.LOGGER_FORMAT),
       ),
       transports: [
         new transports.Console(),
@@ -18,7 +18,7 @@ export class LoggerService {
       ],
     });
   }
-  private readonly logger: Logger;
+
   log = (...data: any[]): void => {
     const message = this.formatMessage(...data);
     this.logger.info(message);
