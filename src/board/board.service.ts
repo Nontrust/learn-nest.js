@@ -3,9 +3,15 @@ import { Board } from './board.model';
 
 import { CreateBoardDto } from './dto/create-board.dto';
 import { BoardStatus } from './enums/boardStatus';
+import { LoggerService } from '../logger/logger.service';
+import { Log } from '../logger/logger';
 
 @Injectable()
 export class BoardService {
+  private readonly logger: Log;
+  constructor(logger: LoggerService) {
+    this.logger = logger;
+  }
   private boards: Board[] = [];
   getAllBoards(): Board[] {
     return this.boards;
@@ -13,6 +19,7 @@ export class BoardService {
 
   findBoardById(id: string): Board {
     const board = this.boards.find((board: Board) => board.id === id);
+    this.logger.info('board is', board);
     if (!board) {
       throw new NotFoundException(`Can\`t find board with id : '${id}'`);
     }
