@@ -4,7 +4,7 @@ import { Board } from './board.model';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { BoardStatus } from './enums/boardStatus';
 import { LoggerService } from '../config/core/logger/logger.service';
-import { Log } from '../config/core/logger/logger';
+import { Log } from '../config/core/logger/logger.abstract';
 
 @Injectable()
 export class BoardService {
