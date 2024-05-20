@@ -1,8 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
 import { YamlConfig } from '../yamlConfig';
 import { YamlService } from './yaml.service';
 
+@Global()
 @Module({
   imports: [
     NestConfigModule.forRoot({
