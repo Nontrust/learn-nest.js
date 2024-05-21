@@ -2,20 +2,27 @@ import { BoardStatus } from './enums/boardStatus';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { v4 as uuid } from 'uuid';
 import { BoardType } from './enums/board.enum.type';
+import { BoardInterface, IBoardBuilder } from '@app/src/board/board.interface';
+import { BoardEntity } from '@app/src/board/board.entity';
 
 export class Board {
   constructor(
     public readonly id: string,
     public title: string,
     public description?: string,
-    public status?: BoardStatus,
-    public type?: BoardType,
-    public viewCount?: number,
+    public status: BoardStatus = BoardStatus.PUBLIC,
+    public type: BoardType = BoardType.INFORMATION,
+    public viewCount: number = 0,
   ) {}
 
-  public static ofDto(dto: CreateBoardDto) {
+  public static fromDto(dto: CreateBoardDto) {
     const { title, description, status, type } = dto;
     return Board.of(uuid(), title, description, status, type, 0);
+  }
+
+  public static fromEntity(entity: BoardEntity) {
+    const { id, title, description, status, type, viewCount } = entity;
+    return Board.of(id, title, description, status, type, viewCount);
   }
 
   public static of(
@@ -37,22 +44,13 @@ export class Board {
   }
 }
 
-interface IBoardBuilder {
-  setId(id: string): this;
-  setTitle(id: string): this;
-  setDescription(id: string): this;
-  setStatus(id: string): this;
-  setType(id: string): this;
-  setViewCount(viewCount: number): this;
-}
-
-export class BoardBuilder implements IBoardBuilder {
-  private id: string;
-  private title: string;
-  private description?: string;
-  private status?: BoardStatus;
-  private type?: BoardType;
-  private viewCount?: number;
+export class BoardBuilder implements IBoardBuilder, BoardInterface {
+  id: string;
+  title: string;
+  description?: string;
+  status: BoardStatus;
+  type: BoardType;
+  viewCount: number;
 
   setDescription(description: string): this {
     this.description = description;

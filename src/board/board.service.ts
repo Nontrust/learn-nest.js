@@ -27,7 +27,7 @@ export class BoardService {
   }
 
   insertBoard(dto: CreateBoardDto): Board {
-    const board = Board.ofDto(dto);
+    const board = Board.fromDto(dto);
     this.boards.push(board);
     return board;
   }
