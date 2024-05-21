@@ -5,3 +5,4 @@ db:
     username: root
     password: 1234
     database: test
+    synchronize: true

@@ -5,9 +5,10 @@ import { CatsModule } from './cats/cats.module';
 import { BoardModule } from './board/board.module';
 import { LoggerModule } from './config/core/logger/logger.module';
 import { YamlModule } from './config/core/yaml/yaml.module';
+import { DatabaseModule } from '@app/src/config/core/database/database.module';
 
 @Module({
-  imports: [CatsModule, BoardModule, LoggerModule, YamlModule],
+  imports: [CatsModule, BoardModule, LoggerModule, YamlModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })
