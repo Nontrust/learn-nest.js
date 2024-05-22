@@ -16,6 +16,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/*": ["./*"],
+      "@src/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
+    }
+  },
+  "include": ["src/**/*","resource/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
