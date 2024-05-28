@@ -22,7 +22,7 @@ export class BoardController {
   }
 
   @Get(':id')
-  getBoard(@Param('id') id: string) {
+  async getBoard(@Param('id') id: number) {
     return this.boardService.findBoardById(id);
   }
   @Post()
@@ -32,16 +32,16 @@ export class BoardController {
   }
 
   @Patch('status/:id')
-  updateBoardStatus(
-    @Param('id') id: string,
+  async updateBoardStatus(
+    @Param('id') id: number,
     @Body('status') status: BoardStatus,
   ) {
-    return this.boardService.updateBoardStatusById(id, status);
+    return await this.boardService.updateBoardStatusById(id, status);
   }
 
   @Delete(':id')
   @HttpCode(204)
-  deleteBoard(@Param('id') id: string) {
-    return this.boardService.deleteBoardById(id);
+  async deleteBoard(@Param('id') id: number) {
+    return await this.boardService.deleteBoardById(id);
   }
 }

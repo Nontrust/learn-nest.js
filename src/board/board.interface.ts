@@ -2,7 +2,7 @@ import { BoardStatus } from '@app/src/board/enums/boardStatus';
 import { BoardType } from '@app/src/board/enums/board.enum.type';
 
 export interface BoardInterface {
-  id?: string;
+  id?: number;
   title: string;
   description?: string;
   status: BoardStatus;
@@ -11,7 +11,7 @@ export interface BoardInterface {
 }
 
 export interface IBoardBuilder {
-  setId(id: string): this;
+  setId(id: number): this;
   setTitle(id: string): this;
   setDescription(id: string): this;
   setStatus(id: string): this;

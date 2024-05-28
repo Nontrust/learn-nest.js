@@ -7,7 +7,7 @@ import { BoardEntity } from '@app/src/board/board.entity';
 
 export class Board {
   constructor(
-    public readonly id: string,
+    public readonly id: number,
     public title: string,
     public description?: string,
     public status: BoardStatus = BoardStatus.PUBLIC,
@@ -26,7 +26,7 @@ export class Board {
   }
 
   public static of(
-    id: string,
+    id: number,
     title: string,
     description: string,
     status: BoardStatus,
@@ -45,7 +45,7 @@ export class Board {
 }
 
 export class BoardBuilder implements IBoardBuilder, BoardInterface {
-  id: string;
+  id: number;
   title: string;
   description?: string;
   status: BoardStatus;
@@ -57,7 +57,7 @@ export class BoardBuilder implements IBoardBuilder, BoardInterface {
     return this;
   }
 
-  setId(id: string): this {
+  setId(id: number): this {
     this.id = id;
     return this;
   }
