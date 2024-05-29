@@ -1,5 +1,5 @@
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
-import { BoardStatus } from '../enums/boardStatus';
+import { BoardStatus } from '../enums/board.status';
 import { BoardType } from '../enums/board.enum.type';
 
 export class CreateBoardDto {

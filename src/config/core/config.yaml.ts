@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as yaml from 'yaml';
 import * as process from 'process';
 
-export class YamlConfig {
+export class ConfigYaml {
   static configYaml: string = `config${process.env.NODE_ENV ? `-${process.env.NODE_ENV}` : ``}.yml`;
   static load() {
     const yamlFilePath = path.resolve(process.cwd(), this.configYaml);

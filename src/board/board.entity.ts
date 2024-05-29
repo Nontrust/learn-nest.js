@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { BoardStatus } from '@app/src/board/enums/boardStatus';
+import { BoardStatus } from '@src/board/enums/board.status';
 import { BoardType } from '@app/src/board/enums/board.enum.type';
 import { Board } from '@app/src/board/board.model';
 import { CreateBoardDto } from '@app/src/board/dto/create-board.dto';

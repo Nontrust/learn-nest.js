@@ -1,4 +1,4 @@
-import { BoardStatus } from '@app/src/board/enums/boardStatus';
+import { BoardStatus } from '@src/board/enums/board.status';
 import { BoardType } from '@app/src/board/enums/board.enum.type';
 
 export interface BoardInterface {

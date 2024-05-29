@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
 
-import { YamlConfig } from '../yamlConfig';
+import { ConfigYaml } from '../config.yaml';
 import * as fs from 'fs';
 import * as yaml from 'yaml';
 
@@ -10,7 +10,7 @@ export class YamlService {
   private readonly yaml: Record<string, any>;
 
   constructor(private readonly yamlConfig: NestConfigService) {
-    const file = fs.readFileSync(YamlConfig.configYaml, 'utf-8');
+    const file = fs.readFileSync(ConfigYaml.configYaml, 'utf-8');
     this.yamlConfig = yaml.parse(file);
   }
   get(key: string): any {

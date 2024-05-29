@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { BoardService } from './board.service';
 import { CreateBoardDto } from './dto/create-board.dto';
-import { BoardStatus } from './enums/boardStatus';
+import { BoardStatus } from './enums/board.status';
 
 @Controller('board')
 export class BoardController {

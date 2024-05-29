@@ -1,6 +1,6 @@
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
-import { YamlConfig } from '../yamlConfig';
+import { ConfigYaml } from '../config.yaml';
 import { YamlService } from './yaml.service';
 
 @Global()
@@ -8,10 +8,10 @@ import { YamlService } from './yaml.service';
   imports: [
     NestConfigModule.forRoot({
       isGlobal: true,
-      load: [() => YamlConfig.load()],
+      load: [() => ConfigYaml.load()],
     }),
   ],
-  providers: [YamlConfig, YamlService],
-  exports: [YamlConfig, YamlService],
+  providers: [ConfigYaml, YamlService],
+  exports: [ConfigYaml, YamlService],
 })
 export class YamlModule {}

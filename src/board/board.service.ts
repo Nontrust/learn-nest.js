@@ -6,7 +6,7 @@ import { InsertResult } from 'typeorm/query-builder/result/InsertResult';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LoggerService } from '@app/src/config/core/logger/logger.service';
 import { CreateBoardDto } from '@app/src/board/dto/create-board.dto';
-import { BoardStatus } from '@app/src/board/enums/boardStatus';
+import { BoardStatus } from '@src/board/enums/board.status';
 
 @Injectable()
 export class BoardService {
