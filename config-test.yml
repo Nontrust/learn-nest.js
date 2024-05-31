@@ -4,5 +4,5 @@ db:
     port: 3306
     username: root
     password: 1234
-    database: nest_dev
+    database: nest_test
     synchronize: true
