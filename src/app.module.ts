@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CatsModule } from './cats/cats.module';
-import { BoardModule } from './board/board.module';
-import { LoggerModule } from './config/core/logger/logger.module';
-import { YamlModule } from './config/core/yaml/yaml.module';
-import { DatabaseModule } from '@app/src/config/core/database/database.module';
+import { LoggerModule } from '@config/core/logger/logger.module';
+import { YamlModule } from '@config/core/yaml/yaml.module';
+import { BoardModule } from '@src/board/board.module';
+import { CatsModule } from '@src/cats/cats.module';
+import { AppController } from '@src/app.controller';
+import { AppService } from '@src/app.service';
+import { DatabaseModule } from '@config/core/database/database.module';
 
 @Module({
   imports: [CatsModule, BoardModule, LoggerModule, YamlModule, DatabaseModule],

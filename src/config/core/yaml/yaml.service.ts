@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
-
-import { ConfigYaml } from '../config.yaml';
 import * as fs from 'fs';
 import * as yaml from 'yaml';
+import { ConfigYaml } from '@config/core/config.yaml';
 
 @Injectable()
 export class YamlService {

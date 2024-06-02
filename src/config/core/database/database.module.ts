@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import getOrmConfig from '../config.typeorm';
 import { YamlService } from '@app/src/config/core/yaml/yaml.service';
 import { ConfigModule } from '@nestjs/config';
 import { LoggerService } from '@app/src/config/core/logger/logger.service';
 import { LoggerModule } from '@app/src/config/core/logger/logger.module';
+import getOrmConfig from '@config/core/config.typeorm';
 
 @Module({
   imports: [

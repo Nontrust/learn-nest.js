@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { BoardController } from './board.controller';
-import { BoardService } from './board.service';
-import { LoggerModule } from '../config/core/logger/logger.module';
 import { BoardRepository } from '@app/src/board/board.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LoggerModule } from '@config/core/logger/logger.module';
+import { BoardController } from '@src/board/board.controller';
+import { BoardService } from '@src/board/board.service';
 
 @Module({
   imports: [
