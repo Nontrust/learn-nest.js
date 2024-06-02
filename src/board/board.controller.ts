@@ -8,9 +8,9 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { BoardService } from './board.service';
-import { CreateBoardDto } from './dto/create-board.dto';
-import { BoardStatus } from './enums/board.status';
+import { BoardService } from '@src/board/board.service';
+import { BoardStatus } from '@src/board/enums/board.status';
+import { CreateBoardDto } from '@src/board/dto/create-board.dto';
 
 @Controller('board')
 export class BoardController {

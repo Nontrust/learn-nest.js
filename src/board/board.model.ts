@@ -1,9 +1,9 @@
-import { BoardStatus } from './enums/board.status';
-import { CreateBoardDto } from './dto/create-board.dto';
 import { v4 as uuid } from 'uuid';
-import { BoardType } from './enums/board.enum.type';
 import { BoardInterface, IBoardBuilder } from '@app/src/board/board.interface';
 import { BoardEntity } from '@app/src/board/board.entity';
+import { BoardStatus } from '@src/board/enums/board.status';
+import { BoardType } from '@src/board/enums/board.enum.type';
+import { CreateBoardDto } from '@src/board/dto/create-board.dto';
 
 export class Board {
   constructor(

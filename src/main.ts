@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { PORT } from '../constant';
-import validationPipe from './config/core/config.validation';
 import * as compression from 'compression';
+import { AppModule } from '@src/app.module';
+import validationPipe from '@config/core/config.validation';
+import { PORT } from '@app/constant';
 
 /** when using default(express) context */
 const bootstrap = async () => {

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { createLogger, format, Logger, transports } from 'winston';
-import { Log } from './logger.abstract';
+import { Log } from '@config/core/logger/logger.abstract';
 
 @Injectable()
 export class LoggerService implements Log {
